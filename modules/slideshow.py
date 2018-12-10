@@ -155,7 +155,9 @@ class slideshow:
       if time_process < delay:
         time.sleep(delay - time_process)
       if tries == 0:
-        self.display.message('Issues showing images\n\nCheck network and settings')
+        logging.warning('Issues showing images\n\nCheck network and settings')
+        # Disable showing of message for a nicer experience
+        # self.display.message('Issues showing images\n\nCheck network and settings')
       else:
         self.display.image(self.imageCurrent)
         os.remove(self.imageCurrent)
